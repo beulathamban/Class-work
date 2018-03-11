@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<body>
+<form id="form1">
+Place:  <input id="autocomplete" name="autocompletebox" type="text" size="40">
+</form>
+
+<script>
+function initAutocomplete(){
+	var input=document.getElementById('autocomplete');
+	var acomplete =new google.maps.places.Autocomplete(input);
+	google.maps.event.addListener(acomplete,'place_changed',function(){
+var place=acomplete.getPlace();
+var mylat=place.geometry.location.lat();
+var mylong=place.geometry.location.lng();
+alert (mylat + ','+ mylong);
+	});
+}
+
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN9jFRRCmL4MHjaaw2ghKhk-6AH_mbSdk&libraries=places&callback=initAutocomplete">
+         </script>
+ </body>
+</html>
