@@ -1,0 +1,14 @@
+function setup(){
+	createCanvas(600,600);
+
+}
+
+function draw(){
+	if (mouseIsPressed){
+		fill(0);
+			}
+			else{
+				fill(255);
+			}
+	ellipse (60,60,80,80);
+}
